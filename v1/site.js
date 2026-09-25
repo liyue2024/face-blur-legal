@@ -95,7 +95,7 @@
 
   function documentHtml(copy, appName, documentPage) {
     var documentCopy = copy[documentPage];
-    return '<main class="document-main"><section class="document-hero"><p class="eyebrow">' + escapeHtml(appName + " · " + interpolate(documentCopy.title, appName)) + "</p><h1>" + escapeHtml(interpolate(documentCopy.title, appName)) + "</h1><p>" + escapeHtml(interpolate(documentCopy.lead, appName)) + '</p><span class="updated">2026-08-08</span></section><article class="document-content">' + documentCopy.sections.map(function (section) { return sectionHtml(section, appName, copy); }).join("") + "</article></main>";
+    return '<main class="document-main"><section class="document-hero"><p class="eyebrow">' + escapeHtml(appName + " · " + interpolate(documentCopy.title, appName)) + "</p><h1>" + escapeHtml(interpolate(documentCopy.title, appName)) + "</h1><p>" + escapeHtml(interpolate(documentCopy.lead, appName)) + '</p><span class="updated">' + (documentPage === "privacy" ? "2026-09-25" : "2026-08-08") + '</span></section><article class="document-content">' + documentCopy.sections.map(function (section) { return sectionHtml(section, appName, copy); }).join("") + "</article></main>";
   }
 
   function supportHtml(copy, appName) {
